@@ -1,0 +1,212 @@
+/*
+        --------------------------------------------------
+                    ESLINT CONFIGURATION FILE
+           CONFIGURED FOR TYPESCRIPT in the NODE.JS RTE
+        --------------------------------------------------
+*/
+{
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    /************************************************
+      TYPESCRIPT-ESLINT PARSER RULES
+      -------------------------------------------------                   */
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-types": "off",
+    /************************************************
+      PREPEND TYPESCRIPT-ESLINT RULES: "@typescript-eslint/"
+
+      ESLINT NATIVE RULES
+      -------------------------------------------------                   */
+    "camelcase": "off",
+    "no-console": "off",
+    "no-useless-constructor": "off",
+    "array-element-newline": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars": "off",
+    // ERROR
+    "no-lonely-if": "error",
+    "no-else-return": "error",
+    "no-useless-return": "error",
+    "semi": ["error", "always"],
+    "comma-style": ["error", "last"],
+    "comma-dangle": ["error", "never"], // No comma on last item
+    "template-curly-spacing": ["error", "never"],
+    "function-paren-newline": ["error", "never"], // No parameters breaking away from parens
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "flatTernaryExpressions": true,
+        "FunctionExpression": {
+          "body": 1,
+          "parameters": "first" // Aligns fn params into a column
+        },
+        "FunctionDeclaration": {
+          "body": 1,
+          "parameters": "first" // Aligns fn params into a column
+        },
+        "CallExpression": {
+          "arguments": 4
+        },
+        "VariableDeclarator": 2,
+        "MemberExpression": 2,
+        "ObjectExpression": 1,
+        "ArrayExpression": 2,
+        "ImportDeclaration": 1
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 4,
+        "maxBOF": 2,
+        "maxEOF": 1
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "tabWidth": 2,
+        "ignoreUrls": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreTrailingComments": true,
+        "ignoreComments": true
+      }
+    ],
+
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "minProperties": 4
+        },
+        "ImportDeclaration": {
+          "minProperties": 4
+        },
+        "ExportDeclaration": "never"
+      }
+    ],
+
+    "key-spacing": [
+      "error",
+      {
+        "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "align": {
+          "beforeColon": true,
+          "afterColon": true,
+          "on": "colon"
+        }
+      }
+    ],
+
+    "keyword-spacing": [
+      "error",
+      {
+        "after": false,
+        "before": true,
+        "overrides": {
+          "case": {
+            "after": true,
+            "before": false
+          },
+          "else": {
+            "after": false,
+            "before": false
+          },
+          "return": {
+            "after": true,
+            "before": true
+          },
+          "import": {
+            "after": true,
+            "before": true
+          },
+          "export": {
+            "after": true,
+            "before": true
+          },
+          "from": {
+            "after": true,
+            "before": true
+          },
+          "as": {
+            "after": true,
+            "before": true
+          },
+          "of": {
+            "after": true,
+            "before": true
+          },
+          "in": {
+            "after": true,
+            "before": true
+          }
+        }
+      }
+    ],
+
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": false
+      }
+    ],
+    "operator-linebreak": [
+      "error",
+      "after",
+      {
+        "overrides": {
+          "?": "before",
+          ":": "before",
+          "||": "before",
+          "|": "before",
+          "&&": "before",
+          "&": "before",
+          ">=": "before",
+          "<=": "before",
+          "==": "before",
+          "===": "before"
+        }
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "space-before-blocks": [
+      "error",
+      {
+        "functions": "never",
+        "keywords": "always",
+        "classes": "never"
+      }
+    ]
+  }
+}
