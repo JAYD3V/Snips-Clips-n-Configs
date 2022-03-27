@@ -1,0 +1,14 @@
+# The following is a configuration for styling a BASH command prompt in a unix
+# terminal that supports 8-bit color and ECMA Standardized Control Functions
+
+# Cmd-prompt Configuration _____________________________________________________
+GRN="\e[0;32m"
+CYAN="\e[0;36m"
+BOLDBLU="\e[0;1;34m"
+BLU="\e[0;34m"
+MGENT="\e[0;35m"
+UNDLYLW="\e[0;4;33m"
+ITALICGRN="\e[0;3;32m"
+END="\e[0m"
+
+export PS1="${BOLDBLU}\A [\u@\H] ${MGENT}\w${BOLDBLU}\$>${END}"
