@@ -1,0 +1,54 @@
+###########################################################################
+#######      #   #   #   #   #   #   #   #   #   #   #   #   #    #########
+#####     #                                                     #    ######
+####   #     IGNORE TEMPLATE for V.S. CODE EXTENSIONS & THEMES     #   ####
+######    #                                                     #    ######
+########     #   #   #   #   #   #   #   #   #   #   #   #   #   ##########
+###########################################################################
+
+# GIT & GITHUB
+.git/**
+.gitignore
+.gitattributes
+
+# NODE & NODE PACKAGE MANAGER
+node_modules/**
+package.json
+.npm/
+.npmignore
+.npmrc
+
+# TYPESCRIPT | JAVASCRIPT
+typeings/**
+build/**
+test/**
+out/**
+.d.ts
+*.d.ts
+*.js
+*.cjs
+*.mjs
+
+# If using a different local tsconfig
+src/tsconfig.json
+
+# DEVELOPMENT ENVIRONMENT
+.vscode/**
+.prettierrc
+.eslintrc.json
+.eslintignore
+.vscodeignore
+
+# CACHE DIRECTORIES
+.eslintcache/**
+.Cache/**
+.npm/**
+npm-debug.log*
+
+# TEMPORARY/ENV
+.Tmp/**
+.Log/**
+.Cache/**
+*.txt.log
+*.log
+*.txt
