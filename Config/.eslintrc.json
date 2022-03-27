@@ -1,111 +1,49 @@
-/*
-        --------------------------------------------------
-                    ESLINT CONFIGURATION FILE
-           CONFIGURED FOR TYPESCRIPT in the NODE.JS RTE
-        --------------------------------------------------
-*/
 {
-  "extends": [
-    "standard",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "env": {
+    "es2021": true,
+    "node": true,
+    "browser": false,
+    "mocha": false,
+    "commonjs": false
+  },
+  "extends": ["eslint:recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [],
   "rules": {
-    /************************************************
-      TYPESCRIPT-ESLINT PARSER RULES
-      -------------------------------------------------                   */
-    "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-inferrable-types": "warn",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/ban-types": "off",
-    /************************************************
-      PREPEND TYPESCRIPT-ESLINT RULES: "@typescript-eslint/"
-
-      ESLINT NATIVE RULES
-      -------------------------------------------------                   */
+    /*
+    DEACTIVATED RULES */
     "camelcase": "off",
     "no-console": "off",
-    "no-useless-constructor": "off",
+    "no-else-return": "off",
+    "no-unused-vars": "off",
+    "no-control-regex": "off",
     "array-element-newline": "off",
     "no-unused-expressions": "off",
-    "no-unused-vars": "off",
-    // ERROR
-    "no-lonely-if": "error",
-    "no-else-return": "error",
-    "no-useless-return": "error",
-    "semi": ["error", "always"],
-    "comma-style": ["error", "last"],
-    "comma-dangle": ["error", "never"], // No comma on last item
+    "no-useless-constructor": "off",
+    /*
+
+    TRUE LINTING RULES
+    Most linting rules are turned on from extending the "ESLint:Recommended"
+    rule-set in the extended property above  */
+    "no-lonely-if": ["error"],
+    "no-useless-return": ["error"],
+    /*
+
+    SPACES & SPACING
+    -------------------------------------------------                   */
+    "space-infix-ops": ["error"], // Enforces spacing around operators
     "template-curly-spacing": ["error", "never"],
-    "function-paren-newline": ["error", "never"], // No parameters breaking away from parens
-    "indent": [
+    "array-bracket-spacing": [
       "error",
-      2,
+      "always",
       {
-        "SwitchCase": 1,
-        "flatTernaryExpressions": true,
-        "FunctionExpression": {
-          "body": 1,
-          "parameters": "first" // Aligns fn params into a column
-        },
-        "FunctionDeclaration": {
-          "body": 1,
-          "parameters": "first" // Aligns fn params into a column
-        },
-        "CallExpression": {
-          "arguments": 4
-        },
-        "VariableDeclarator": 2,
-        "MemberExpression": 2,
-        "ObjectExpression": 1,
-        "ArrayExpression": 2,
-        "ImportDeclaration": 1
+        "objectsInArrays": false
       }
     ],
-    "quotes": [
-      "error",
-      "single",
-      {
-        "allowTemplateLiterals": true
-      }
-    ],
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 4,
-        "maxBOF": 2,
-        "maxEOF": 1
-      }
-    ],
-    "max-len": [
-      "error",
-      {
-        "code": 80,
-        "tabWidth": 2,
-        "ignoreUrls": true,
-        "ignoreRegExpLiterals": true,
-        "ignoreTrailingComments": true,
-        "ignoreComments": true
-      }
-    ],
-
-    "object-curly-newline": [
-      "error",
-      {
-        "ObjectExpression": {
-          "consistent": true
-        },
-        "ObjectPattern": {
-          "minProperties": 4
-        },
-        "ImportDeclaration": {
-          "minProperties": 4
-        },
-        "ExportDeclaration": "never"
-      }
-    ],
-
     "key-spacing": [
       "error",
       {
@@ -120,7 +58,6 @@
         }
       }
     ],
-
     "keyword-spacing": [
       "error",
       {
@@ -166,12 +103,68 @@
         }
       }
     ],
-
     "object-curly-spacing": [
       "error",
       "always",
       {
         "arraysInObjects": false
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "space-before-blocks": [
+      "error",
+      {
+        "functions": "never",
+        "keywords": "always",
+        "classes": "never"
+      }
+    ],
+    /*
+
+
+    LINES, LINE LENGTH & LINE BREAKS
+    -------------------------------------------------                   */
+    "linebreak-style": ["error", "unix"],
+    "function-paren-newline": ["error", "never"], // Keep 1st param on same line as func
+    "max-len": [
+      "error",
+      {
+        "code": 90,
+        "tabWidth": 2,
+        "ignoreUrls": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreTrailingComments": true,
+        "ignoreComments": true
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 4,
+        "maxBOF": 2,
+        "maxEOF": 1
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "minProperties": 4
+        },
+        "ImportDeclaration": {
+          "minProperties": 4
+        },
+        "ExportDeclaration": "never"
       }
     ],
     "operator-linebreak": [
@@ -192,20 +185,47 @@
         }
       }
     ],
-    "space-before-function-paren": [
+    /*
+
+    INDENTATION
+    -------------------------------------------------                   */
+    "indent": [
       "error",
+      2,
       {
-        "anonymous": "never",
-        "named": "never",
-        "asyncArrow": "always"
+        "SwitchCase": 1,
+        "offsetTernaryExpressions": true,
+        "flatTernaryExpressions": false,
+        "FunctionExpression": {
+          "body": 1,
+          "parameters": "first" // Aligns fn params into a column
+        },
+        "FunctionDeclaration": {
+          "body": 1,
+          "parameters": "first" // Aligns fn params into a column
+        },
+        "CallExpression": {
+          "arguments": "first"
+        },
+        "VariableDeclarator": "first",
+        "ObjectExpression": "first",
+        "ImportDeclaration": "first",
+        "ArrayExpression": "first",
+        "MemberExpression": 2
       }
     ],
-    "space-before-blocks": [
+    /*
+
+    COMMAS, SEMI-COLONS & QUOTATION MARKS
+    -------------------------------------------------                   */
+    "comma-style": ["error", "last"],
+    "comma-dangle": ["error", "never"],
+    "semi": ["error", "always"],
+    "quotes": [
       "error",
+      "single",
       {
-        "functions": "never",
-        "keywords": "always",
-        "classes": "never"
+        "allowTemplateLiterals": true
       }
     ]
   }
