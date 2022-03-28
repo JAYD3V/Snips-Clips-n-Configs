@@ -1,0 +1,44 @@
+###################################################################################
+#######      #   #   #   #   #   #   #   #   #   #   #   #   #   #   #    #########
+#####     #                                                             #    ######
+####   #     IGNORE TEMPLATE for ESM NODE MODULES WRITTEN IN TYPESCRIPT    #   ####
+######    #                                                             #    ######
+########     #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   ##########
+###################################################################################
+
+# GIT & GITHUB
+.git/**
+.gitignore
+.gitattributes
+
+# NPM & NODE_MODULES
+node_modules/**
+package.json
+.npm/
+.npmignore
+.npmrc
+
+# TYPESCRIPT | JAVASCRIPT
+# (Choose One Out Directory)
+# ? -> module/*
+# ? -> build/*
+# ? -> out/*
+*.js
+*.mjs
+*.cjs
+*.cts
+*.d.ts
+
+# DEVELOPMENT ENVIRONMENT
+.vscode/**
+.eslintrc.json
+.eslintignore
+.prettierrc
+.editorconfig
+
+# TEMPORARY
+.Cache/**
+.tmp/**
+log/**
+*.log
+*.txt
