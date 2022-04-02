@@ -1,3 +1,5 @@
+type NonNullable<T> = T extends null | undefined ? never : T;
+
 function assertNonNullish<T>(
   val: T,
   mesg: string
